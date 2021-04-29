@@ -8,6 +8,7 @@ package Server;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -31,8 +32,8 @@ public class ServerMain {
             Socket client = server.accept();
             PrintWriter out = new PrintWriter(client.getOutputStream(), true);
             BufferedReader in = new BufferedReader( new InputStreamReader(client.getInputStream()));
-            System.out.println((char)in.read());
-            
+//            ObjectInputStream is =new ObjectInputStream(client.getInputStream());
+           
         }catch (IOException ex) {
             Logger.getLogger(ServerMain.class.getName()).log(Level.SEVERE, null, ex);
         }    
